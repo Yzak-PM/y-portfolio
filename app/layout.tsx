@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import NavMain from "@/components/layout/nav-main";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
+import NavMain from "@/components/layout/NavMain";
+import HomeBackground from "@/components/layout/HomeBackground";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,9 +22,10 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full", "antialiased", "font-sans", geist.variable)}
     >
-      <body className="min-h-full flex flex-col p-2">
+      <body className="min-h-full flex flex-col p-2 relative">
+        <HomeBackground />
         <NavMain />
-        <div className="px-3">
+        <div className="px-5 mt-2">
           {children}
         </div>
       </body>

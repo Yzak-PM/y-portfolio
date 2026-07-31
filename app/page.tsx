@@ -1,5 +1,7 @@
-import ExperiencePage from "@/components/experience";
+import AboutContainer from "@/components/About";
+import ExperiencePage from "@/components/Experience";
 import GradientText from "@/components/GradientText";
+import ProjectsContainer from "@/components/Projects";
 import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
@@ -10,31 +12,31 @@ export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="lg:max-w-3/4 ">
-        <div className="flex flex-col-reverse md:flex-row md:justify-between text-gray-200 lg:mt-25 mb-12 lg:mb-35">
-          <div className="lg:max-w-2/3 lg:pe-4 flex flex-col justify-center">
-            <h1 className="text-5xl lg:text-7xl font-medium">
+        <div className="flex flex-col-reverse justify-center items-center md:flex-row md:justify-between text-gray-200 h-full py-30 lg:py-0">
+          <div className="lg:max-w-2/3 lg:pe-4 flex flex-col justify-center lg:pt-40 lg:pb-40">
+            <h1 className="text-6xl lg:text-7xl font-medium">
               Hola, soy <GradientText
-              colors={["blue","skyblue","#BDDDFF"]}
-              animationSpeed={8}
-              showBorder={false}
-              className="inline"
-            >
-              Isaac Peña
-            </GradientText>
+                colors={["blue","skyblue","#BDDDFF"]}
+                animationSpeed={8}
+                showBorder={false}
+                className="inline"
+              >
+                Isaac Peña
+              </GradientText>
             </h1>
-            
-            <h3 className="text-xl lg:text-3xl mt-4 mb-4">
+
+            <h3 className="text-3xl lg:text-3xl mt-4 mb-4">
               <span className="text-teal-400">Desarrollador web Jr </span>
               con +2 a&ntilde;os de experiencia en desarrollo de aplicaciones ERP web para empresas l&iacute;deres en la industria.
             </h3>
-            <div className="flex justify-center gap-6">
+            <div className="flex justify-center gap-8">
               <FaGithub size={30} className="cursor-pointer animate-pulse hover:animate-none text-white" /> 
               <FaLinkedin size={30} className="cursor-pointer animate-pulse hover:animate-none text-blue-400" /> 
               <FaFilePdf size={30} className="cursor-pointer animate-pulse hover:animate-none text-red-400" /> 
               <LuMailPlus size={30} className="cursor-pointer animate-pulse hover:animate-none text-green-400" /> 
             </div>
           </div>
-          <div className="justify-items-center mb-4 lg:mb-0">
+          <div className="flex justify-items-center items-center mb-5 lg:mb-40">
             <Image 
               src="/me.jpg" 
               alt="Me" 
@@ -45,6 +47,8 @@ export default function Home() {
           </div>
         </div> 
         <ExperiencePage />
+        <ProjectsContainer />
+        <AboutContainer />
       </div>
     </div>
   );

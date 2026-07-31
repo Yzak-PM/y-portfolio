@@ -27,7 +27,7 @@ export default function NavMain() {
   return (
     <>
       <nav className="w-full x-20 top-0 start-0">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto md:p-4">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="w-full block" id="navbar">
             <ul className="font-medium flex gap-2 md:gap-7 align-middle justify-center">
               { navLinks.map(navLink => (

@@ -48,30 +48,24 @@ const jobs: JobInfo[] = [
     date: "Junio 2023 - Abril 2024",
     position: "Practicante de sistemas",
     company: "Regal Rexnord",
-    description: `
-      Soporte técnico integral a usuarios internos, cubriendo hardware, software y redes. 
-      Experiencia en diagnóstico y resolución de incidencias, instalación y configuración de sistemas operativos y 
-      herramientas empresariales, así como mantenimiento preventivo y correctivo de equipos de cómputo.`
+    description: `Soporte técnico integral a usuarios internos, cubriendo hardware, software y redes.  
+      \nExperiencia en diagnóstico y resolución de incidencias, instalación y configuración de sistemas operativos y herramientas empresariales, así como mantenimiento preventivo y correctivo de equipos de cómputo.`
   },
   {
     date: "Abril 2022",
     position: "Practicante de sistemas",
     company: "PowerSonic",
-    description: `
-      Desarrollé un dashboard ejecutivo en Power BI, consolidando información clave de múltiples departamentos 
-      (producción, recursos humanos y enfermería) a partir de la base de datos existente de la empresa. 
-      El dashboard centralizaba métricas como PNs terminados, piezas en scrap, faltas de personal y atenciones 
-      registradas en enfermería, mediante consultas SQL, facilitando el acceso a información relevante para la 
-      toma de decisiones.
+    description: `Desarrollé un dashboard ejecutivo en Power BI, consolidando información clave de múltiples departamentos (producción, recursos humanos y enfermería) a partir de la base de datos existente de la empresa. 
+      \nEl dashboard centralizaba métricas como PNs terminados, piezas en scrap, faltas de personal y atenciones registradas en enfermería, mediante consultas SQL, facilitando el acceso a información relevante para la toma de decisiones.
     `
   },
 ]
 
 export default function ExperiencePage() {
   return (
-    <div className="w-full flex justify-center items-center">
-      <div className="lg:max-w-2/3">
+    <div className="w-full flex flex-col justify-center items-center">
         <h2 className="flex text-4xl font-semibold text-neutral-200"><FaBriefcase className="me-3" /> Experiencia laboral</h2>
+      <div className="lg:max-w-2/3">
 
         <ol className="relative border-s border-neutral-600 text-white mt-3">
             {jobs.map(job => (
@@ -93,7 +87,7 @@ export default function ExperiencePage() {
                       }
                     </ul>
                   ) : (
-                    <p className="md:text-lg ps-8">{job.description}</p>
+                    <p className="md:text-lg ps-4 md:ps-8 whitespace-pre-line">{job.description}</p>
                   )}
               </li>
             ))}
