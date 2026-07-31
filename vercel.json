@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/wallet",
+      "destination": "https://y-wallet-web.vercel.app"
+    },
+    {
+      "source": "/wallet/:path*",
+      "destination": "https://y-wallet-web.vercel.app/:path*"
+    }
+  ]
+}
