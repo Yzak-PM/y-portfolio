@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import NavMain from "@/components/layout/NavMain";
 import HomeBackground from "@/components/layout/HomeBackground";
 
-const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "Portafolio de Isaac - Desarrollador web Jr.",
@@ -25,9 +25,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col p-2 relative">
         <HomeBackground />
         <NavMain />
-        <div className="px-5 mt-2">
-          {children}
-        </div>
+        <div className="px-5 mt-2">{children}</div>
       </body>
     </html>
   );

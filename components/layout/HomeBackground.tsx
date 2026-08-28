@@ -9,12 +9,10 @@ export default function HomeBackground() {
   if (pathname !== "/") return null;
 
   return (
-    <div
-      className="absolute top-0 left-0 w-full -z-10 h-screen"
-    >
+    <div className="absolute top-0 left-0 w-full -z-10 h-screen">
       <LiquidEther
         // colors={['#2e3172', '#597eca', '#374c7a']}
-        colors={['#2e3172', '#597eca', '#374c7a']}
+        colors={["#2e3172", "#597eca", "#374c7a"]}
         mouseForce={20}
         cursorSize={100}
         isViscous

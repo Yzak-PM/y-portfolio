@@ -1,15 +1,21 @@
+"use client";
 import AboutContainer from "@/components/About";
 import ExperiencePage from "@/components/Experience";
 import GradientText from "@/components/GradientText";
 import ProjectsContainer from "@/components/Projects";
 import Image from "next/image";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
+import { useRef } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaFilePdf } from "react-icons/fa6";
 import { LuMailPlus } from "react-icons/lu";
 import SpecularButton from "@/components/SpecularButton";
 
 export default function Home() {
+  const experienceRef = useRef<HTMLDivElement>(null);
+  const scrollToExperience = () => {
+    experienceRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="md:max-w-4/5 xl:max-w-3/4">
@@ -64,14 +70,26 @@ export default function Home() {
             </div>
           </div>
           <div className="flex justify-center mt-15 md:mt-30">
-            <SpecularButton autoAnimate={true} tint="white" lineColor="#00D1AB">
+            <SpecularButton
+              autoAnimate={true}
+              tint="white"
+              lineColor="#00D1AB"
+              className="hover:bg-gray-300 hover:text-black"
+              onClick={scrollToExperience}
+            >
               Ver experiencia
             </SpecularButton>
           </div>
         </div>
-        <ExperiencePage />
-        <ProjectsContainer className="mb-10"/>
-        <AboutContainer />
+        <div ref={experienceRef} id="experience">
+          <ExperiencePage />
+        </div>
+        <div id="projects">
+          <ProjectsContainer className="mb-10" />
+        </div>
+        <div id="about">
+          <AboutContainer />
+        </div>
       </div>
     </div>
   );

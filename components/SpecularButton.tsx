@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import {
   useRef,
   useEffect,
@@ -133,7 +133,7 @@ const SpecularButton = ({
   shineFade = 40,
   thickness = 2,
   speed = 1.35,
-  followMouse = true,
+  followMouse = false,
   proximity = 250,
   autoAnimate = false,
   disabled = false,
