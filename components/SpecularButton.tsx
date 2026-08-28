@@ -268,7 +268,10 @@ const SpecularButton = ({
         p.followMouse &&
         pointerAngle != null &&
         (!p.autoAnimate || proximityT > 0);
-      const target = steer ? pointerAngle : idleAngle;
+      const target =
+        p.followMouse && pointerAngle != null && (!p.autoAnimate || proximityT > 0)
+          ? pointerAngle
+          : idleAngle;
       const diff = ((target - angle + Math.PI * 3) % (Math.PI * 2)) - Math.PI;
       angle += diff * (1 - Math.exp(-dt * 7));
 
