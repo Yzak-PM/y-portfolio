@@ -64,9 +64,8 @@ const jobs: JobInfo[] = [
 export default function ExperiencePage() {
   return (
     <div className="w-full flex flex-col justify-center items-center">
-        <h2 className="flex text-4xl font-semibold text-neutral-200"><FaBriefcase className="me-3" /> Experiencia laboral</h2>
+      <h2 className="flex text-4xl font-semibold text-neutral-200"><FaBriefcase className="me-3" /> Experiencia laboral</h2>
       <div className="lg:max-w-2/3">
-
         <ol className="relative border-s border-neutral-600 text-white mt-3">
             {jobs.map(job => (
               <li key={job.date} className="mb-10 ms-4">

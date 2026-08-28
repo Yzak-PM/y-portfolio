@@ -1,8 +1,12 @@
 import { AiFillProject } from "react-icons/ai";
 
-export default function ProjectsContainer() {
+interface ProjectsContainerProps {
+  className?: string;
+}
+
+export default function ProjectsContainer({className}: ProjectsContainerProps) {
   return (
-    <div className="w-full flex flex-col justify-center items-center">
+    <div className={`w-full flex flex-col justify-center items-center ${className}`}>
       <h2 className="flex text-4xl font-semibold text-neutral-200"><AiFillProject className="me-3" /> Proyectos</h2>
       <div className="">
 
