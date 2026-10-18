@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "@/app/globals.css";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 import NavMain from "@/components/layout/NavMain";
