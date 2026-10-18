@@ -8,7 +8,42 @@ import { useRef } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaFilePdf } from "react-icons/fa6";
 import { LuMailPlus } from "react-icons/lu";
+import { IconType } from "react-icons";
 import SpecularButton from "@/components/SpecularButton";
+
+type SocialLink = {
+  icon: IconType;
+  href: string;
+  label: string;
+  color: string;
+};
+
+const socialLinks: SocialLink[] = [
+  {
+    icon: FaGithub,
+    href: "github.com",
+    label: "GitHub",
+    color: "text-white",
+  },
+  {
+    icon: FaLinkedin,
+    href: "https://linkedin.com/in/tu-usuario",
+    label: "LinkedIn",
+    color: "text-blue-400",
+  },
+  {
+    icon: FaFilePdf,
+    href: "/cv.pdf",
+    label: "Curriculum",
+    color: "text-red-400",
+  },
+  {
+    icon: LuMailPlus,
+    href: "mailto:tu-correo@ejemplo.com",
+    label: "Email",
+    color: "text-green-400",
+  },
+];
 
 export default function Home() {
   const experienceRef = useRef<HTMLDivElement>(null);
@@ -40,22 +75,24 @@ export default function Home() {
                 ERP web para empresas l&iacute;deres en la industria.
               </h3>
               <div className="flex justify-center gap-8">
-                <FaGithub
-                  size={30}
-                  className="cursor-pointer animate-pulse hover:animate-none text-white"
-                />
-                <FaLinkedin
-                  size={30}
-                  className="cursor-pointer animate-pulse hover:animate-none text-blue-400"
-                />
-                <FaFilePdf
-                  size={30}
-                  className="cursor-pointer animate-pulse hover:animate-none text-red-400"
-                />
-                <LuMailPlus
-                  size={30}
-                  className="cursor-pointer animate-pulse hover:animate-none text-green-400"
-                />
+                {socialLinks.map(({ icon: Icon, href, label, color }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target={href.startsWith("http") ? "_blank" : undefined}
+                    rel={
+                      href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                    aria-label={label}
+                  >
+                    <Icon
+                      size={30}
+                      className={`cursor-pointer animate-pulse hover:animate-none ${color}`}
+                    />
+                  </a>
+                ))}
               </div>
             </div>
             <div className="flex justify-items-center items-center mb-5 lg:mt-1 shrink-0">
