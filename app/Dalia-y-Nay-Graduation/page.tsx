@@ -116,7 +116,7 @@ export default function DnFestPage() {
       <div className="flex flex-col text-2xl mb-7">
         <p className="">Trae tu consumo</p>
         <p className="">No botellas de vidrio</p>
-        <p className="">Persona extra cover $150</p>
+        {/* <p className="">Persona extra cover $150</p> */}
       </div>
 
       <a
